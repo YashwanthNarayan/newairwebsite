@@ -666,5 +666,9 @@ img { max-width: 100%; }
 .pf-link:hover { text-decoration: underline; }
 
 /* Narrow screens: roster strip goes static (per TeamRunway intent); keep header meta on one line, drop the live counter */
-.tm-head .tm-headmeta span { white-space: nowrap; }
 .hs-wrap.static .tm-count { display: none; }
+@media (max-width: 719px) {
+    .tm-head .tm-headmeta { gap: 10px; }
+    .tm-head .tm-headmeta span { white-space: nowrap; }
+    .tm-head .tm-headmeta i { flex-basis: 36px; }
+}
