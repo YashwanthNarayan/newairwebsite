@@ -1069,7 +1069,12 @@ function TeamRunway() {
     const barRef = useRef<HTMLDivElement | null>(null);
     const countRef = useRef<HTMLDivElement | null>(null);
     const [on, setOn] = useState(false);
-    useEffect(() => { setOn(!reduceMotion()); }, []);
+    useEffect(() => {
+        const f = () => setOn(!reduceMotion() && window.innerWidth > 719);
+        f();
+        window.addEventListener('resize', f);
+        return () => window.removeEventListener('resize', f);
+    }, []);
     useEffect(() => {
         const wrap = wrapRef.current, track = trackRef.current;
         const root = document.querySelector('.site2') as HTMLElement | null;

@@ -664,3 +664,7 @@ img { max-width: 100%; }
 @media (max-width: 640px) { .mention { grid-template-columns: 1fr 18px; } .mention-what { grid-column: 1 / -1; order: 3; } }
 .pf-link { margin-top: 8px; font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); font-weight: 700; text-decoration: none; }
 .pf-link:hover { text-decoration: underline; }
+
+/* Narrow screens: roster strip goes static (per TeamRunway intent); keep header meta on one line, drop the live counter */
+.tm-head .tm-headmeta span { white-space: nowrap; }
+.hs-wrap.static .tm-count { display: none; }
