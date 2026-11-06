@@ -635,7 +635,7 @@ function Footer() {
                     <a href="https://www.linkedin.com/company/airethought" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 </div>
             </div>
-            <div className="foot-base">AIRethought - a student-led organization. Private working preview; not the live site.</div>
+            <div className="foot-base">AIRethought - a student-led organization.</div>
         </footer>
     );
 }
