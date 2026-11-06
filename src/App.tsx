@@ -1177,9 +1177,6 @@ function TeamPage() {
                 <Head kicker="Our team" title="Meet the core team." intro="The passionate students behind AIR who make everything possible." />
             </section>
             <TeamRunway />
-            <section className="sec light-sec">
-                <p className="body-p">Fourteen portraits, plus Vinay Soundharajan, whose photo stays blank by design. Seven more members have no usable photo yet - no stock stand-ins. Beyond the core team, chapter ambassadors carry AIR into their own cities.</p>
-            </section>
             <section className="sec light-sec dots">
                 <Kicker>Where AIR shows up</Kicker>
                 <h2 className="sec-title">Members and ambassadors, city by city.</h2>
