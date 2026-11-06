@@ -4,7 +4,7 @@ import { copyFileSync, mkdirSync } from 'fs';
 await esbuild.build({
   entryPoints: ['entry.tsx'],
   bundle: true,
-  outfile: 'dist/assets/bundle.js',
+  outfile: 'dist/bundle.js',
   loader: {
     '.png': 'file',
     '.jpg': 'file',
