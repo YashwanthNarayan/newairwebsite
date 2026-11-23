@@ -63,7 +63,7 @@ export default async (req) => {
     try {
         const [stats, pages, referrers, places, devices, active] = await Promise.all([
             upstream(`/api/websites/${WEBSITE_ID}/stats?${w}`, token),
-            upstream(`/api/websites/${WEBSITE_ID}/metrics?${w}&type=url&limit=8`, token),
+            upstream(`/api/websites/${WEBSITE_ID}/metrics?${w}&type=path&limit=8`, token),
             upstream(`/api/websites/${WEBSITE_ID}/metrics?${w}&type=referrer&limit=8`, token),
             upstream(`/api/websites/${WEBSITE_ID}/metrics?${w}&type=city&limit=8`, token)
                 .catch(() => upstream(`/api/websites/${WEBSITE_ID}/metrics?${w}&type=country&limit=8`, token)),
