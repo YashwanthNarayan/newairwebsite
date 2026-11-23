@@ -1,0 +1,86 @@
+@font-face {
+    font-family: 'Anton';
+    src: url('../assets/anton.woff2') format('woff2');
+    font-display: swap;
+}
+
+:root {
+    --ink: #101014;
+    --paper: #f2efe8;
+    --gold: #d9962e;
+    --grey: #8a8a90;
+    --panel: #1b1b21;
+    --line: rgba(242, 239, 232, 0.14);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--ink); color: var(--paper); font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif; }
+
+.ad { max-width: 980px; margin: 0 auto; padding: 28px 22px 60px; }
+.ad-center { min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+
+.ad-signin { text-align: center; max-width: 360px; padding: 40px 28px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; }
+.ad-signin-mark { width: 54px; height: auto; margin-bottom: 14px; }
+.ad-signin h1 { font-family: 'Anton'; font-weight: 400; font-size: 30px; letter-spacing: 0.04em; text-transform: uppercase; margin: 0 0 6px; }
+.ad-signin h1 span, .ad-brand span { color: var(--gold); }
+.ad-kicker { font-size: 10px; letter-spacing: 0.34em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; font-weight: 700; }
+.ad-muted { color: var(--grey); font-size: 14px; line-height: 1.5; }
+.ad-btn { margin-top: 18px; background: var(--gold); color: var(--ink); border: none; border-radius: 8px; padding: 12px 30px; font-size: 15px; font-weight: 700; cursor: pointer; }
+.ad-btn:hover { filter: brightness(1.08); }
+.ad-fine { color: var(--grey); font-size: 12px; line-height: 1.5; margin-top: 16px; }
+
+.ad-top { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.ad-brand { display: flex; align-items: center; gap: 10px; font-family: 'Anton'; font-size: 24px; letter-spacing: 0.04em; text-transform: uppercase; }
+.ad-brand img { width: 30px; height: auto; }
+.ad-top-right { display: flex; align-items: center; gap: 12px; }
+.ad-user { color: var(--grey); font-size: 13px; }
+.ad-linkbtn { background: none; border: none; color: var(--gold); font-size: 13px; cursor: pointer; padding: 0; text-decoration: underline; }
+
+.ad-pills { display: flex; gap: 8px; margin: 22px 0 10px; }
+.ad-pills button { background: none; border: 1px solid var(--line); color: var(--paper); border-radius: 999px; padding: 8px 18px; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; }
+.ad-pills button.on { background: var(--gold); border-color: var(--gold); color: var(--ink); font-weight: 700; }
+
+.ad-live { display: flex; align-items: baseline; gap: 8px; color: var(--gold); font-weight: 700; font-size: 15px; margin: 10px 0 20px; }
+.ad-live i { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); align-self: center; }
+.ad-live span { color: var(--grey); font-weight: 400; font-size: 12px; }
+
+.ad-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 12px; }
+.ad-stat { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+.ad-stat label { display: block; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--grey); margin-bottom: 8px; font-weight: 700; }
+.ad-stat b { font-family: 'Anton'; font-weight: 400; font-size: 34px; letter-spacing: 0.02em; display: block; }
+.ad-stat small { color: var(--grey); font-size: 12px; }
+
+.ad-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.ad-panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+.ad-panel h2 { font-size: 11px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin: 0 0 14px; font-weight: 700; }
+
+.ad-bars { list-style: none; margin: 0; padding: 0; }
+.ad-bars li { display: flex; align-items: center; gap: 10px; padding: 6px 0; font-size: 14px; }
+.ad-bar-name { flex: 0 0 34%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ad-bar-track { flex: 1; height: 8px; background: rgba(242,239,232,0.08); border-radius: 4px; overflow: hidden; }
+.ad-bar-fill { display: block; height: 100%; background: var(--gold); border-radius: 4px; }
+.ad-bar-val { flex: 0 0 auto; color: var(--paper); font-variant-numeric: tabular-nums; min-width: 40px; text-align: right; }
+
+.ad-empty { color: var(--grey); font-size: 14px; }
+
+.ad-donut-row { display: flex; align-items: center; gap: 22px; }
+.ad-donut { width: 130px; height: 130px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex: 0 0 auto; }
+.ad-donut span { background: var(--panel); width: 84px; height: 84px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Anton'; font-size: 24px; }
+.ad-legend { list-style: none; margin: 0; padding: 0; font-size: 14px; }
+.ad-legend li { display: flex; align-items: center; gap: 8px; padding: 4px 0; }
+.ad-legend i { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
+
+.ad-note { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; color: var(--paper); font-size: 14px; }
+.ad-foot { margin-top: 26px; color: var(--grey); font-size: 12px; line-height: 1.6; border-top: 1px solid var(--line); padding-top: 16px; }
+
+@media (max-width: 760px) {
+    .ad { padding: 20px 16px 48px; }
+    .ad-stats { grid-template-columns: 1fr 1fr; }
+    .ad-grid { grid-template-columns: 1fr; }
+    .ad-stat b { font-size: 28px; }
+    .ad-bar-name { flex-basis: 30%; }
+}
+
+.ad-form { display: flex; flex-direction: column; gap: 10px; margin-top: 18px; }
+.ad-input { background: rgba(242,239,232,0.06); border: 1px solid var(--line); border-radius: 8px; color: var(--paper); padding: 12px 14px; font-size: 15px; }
+.ad-input:focus { outline: none; border-color: var(--gold); }
