@@ -71,17 +71,21 @@ export default async (req) => {
             upstream(`/api/websites/${WEBSITE_ID}/active`, token).catch(() => ({ x: 0 })),
         ]);
 
-        const visits = stats?.visits?.value ?? 0;
+        // Umami v3 returns flat counters with a `comparison` block; accept
+        // both that and the older { value, prev } shape.
+        const num = (v) => (typeof v === 'number' ? v : (v && typeof v.value === 'number' ? v.value : 0));
+        const cmp = stats?.comparison ?? {};
+        const visits = num(stats?.visits);
         const body = {
             range,
             live: active?.x ?? 0,
             totals: {
-                visitors: stats?.visitors?.value ?? 0,
-                pageviews: stats?.pageviews?.value ?? 0,
-                avgVisitSeconds: visits > 0 ? Math.round((stats?.totaltime?.value ?? 0) / visits) : 0,
-                bounceRate: visits > 0 ? (stats?.bounces?.value ?? 0) / visits : 0,
-                prevVisitors: stats?.visitors?.prev ?? null,
-                prevPageviews: stats?.pageviews?.prev ?? null,
+                visitors: num(stats?.visitors),
+                pageviews: num(stats?.pageviews),
+                avgVisitSeconds: visits > 0 ? Math.round(num(stats?.totaltime) / visits) : 0,
+                bounceRate: visits > 0 ? num(stats?.bounces) / visits : 0,
+                prevVisitors: typeof cmp.visitors === 'number' ? cmp.visitors : (stats?.visitors?.prev ?? null),
+                prevPageviews: typeof cmp.pageviews === 'number' ? cmp.pageviews : (stats?.pageviews?.prev ?? null),
             },
             pages: Array.isArray(pages) ? pages : [],
             referrers: Array.isArray(referrers) ? referrers : [],
