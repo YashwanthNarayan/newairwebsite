@@ -44,9 +44,10 @@ export default async (req) => {
         return Response.json({ error: 'unauthorized' }, { status: 401 });
     }
 
-    // Verify the token itself, then this token's access to this website.
+    // A token that can read this website is both valid and authorized for it.
+    // (Umami v3 removed GET /api/auth/verify - it answers 405 - so the
+    // per-website read is the verification step, in a single upstream call.)
     try {
-        await upstream('/api/auth/verify', token);
         await upstream(`/api/websites/${WEBSITE_ID}`, token);
     } catch (e) {
         const status = e.status === 404 ? 403 : 401;
